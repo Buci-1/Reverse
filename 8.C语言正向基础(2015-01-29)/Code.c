@@ -54,7 +54,7 @@ void CopySumArray() {
 }
 
 //6、写一个函数int prime(int x)，如果x是素数返回值为1，否则返回0。
-
+//垃圾
 int prime(int x) {
     int y = x;
     int Sum = 0;
@@ -65,6 +65,19 @@ int prime(int x) {
         y--;
     } while (y != 0);
       return Sum == 2 ? 1: 0;
+}
+//示例
+int prime2(int x){
+    int r = 1;
+    int n = 2;
+    while(n<x){
+        if(x%n==0){
+            r = 0;
+            break;
+        }
+        n++;
+    }
+    return r;
 }
 
 //7、俩俩比较数组的值，将最大的一个存储到数组的最后一个位置 
@@ -100,14 +113,19 @@ void bubble_sort(int arr[],int len) {
     }
 }
 
+//1、判断数组是否是对称的，如果是返回1，不是返回0.
+int is_symmectric() {
+    int size[10] = { 1,2,3,4,5,5,4,3,2,1 };
+    for (int i = 0, j = 9; i < 5; i++, j--) {
+        if (size[i] != size[j]) {
+            return 0;
+        }
+    }
+    return 1;
+}
 
 
 
-
-
-
-
- 
 
 
 int main(){
