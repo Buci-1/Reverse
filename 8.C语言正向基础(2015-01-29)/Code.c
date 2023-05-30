@@ -27,7 +27,7 @@ int MaxArray() {
 }
 
 //4、将数组所有的元素相加，将结果返回
-void SumArray(){
+int SumArray(){
     int size[10] = {0,1,2,3,4,5,6,7,8,9};
     int Sum = 0,i = 0;
     do{
@@ -35,6 +35,7 @@ void SumArray(){
         i++
     }while(i<10);
     printf("out:%d\n",Sum);
+    return Sum;
 }
 
 //5、将两个等长数组相同位置的值相加，存储到另外一个等长的数组中
@@ -67,6 +68,37 @@ int prime(int x) {
 }
 
 //7、俩俩比较数组的值，将最大的一个存储到数组的最后一个位置 
+void put_max_to_end() {
+    int size[10] = { 1,2,4,6,9,2,3,5,1,2 };
+    int Max = 0;
+    int i = 1;
+    while (i < 10) {
+        if (size[i] < size[i-1]) {
+            Max = size[i];
+            size[i] = size[i - 1];
+            size[i-1] = Max;
+        }
+        i++;
+    }
+    printf("%d\n", size[9]);
+}
+
+//8、编写程序实现一个冒泡排序的算法.
+void bubble_sort(int arr[],int len) {
+    int i,j,temp;
+    for (i = 0; i < len - 1; i++) {
+        for (j = 0; j < len - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j+1] = temp;
+			}
+        }
+    }
+    for (i = 0; i < 10; i++) {
+        printf("%d\n", arr[i]);
+    }
+}
 
 
 
@@ -75,8 +107,7 @@ int prime(int x) {
 
 
 
-
-
+ 
 
 
 int main(){
