@@ -88,12 +88,14 @@ void FindRoleNameAddr(char* pData, char* pRoleName) {    //wow *pRoleName = 'w',
 			j = 0;                      
 			while (j <= len) {                  //进入循环判断是不是在第一个相同的字符后，后续字符也相同
 				if ((*pData_a) == 0 && (*pRoleName_a) == 0) {       //如果字符位0，则比较到了结束符，下面就可以打印查询到的地址和字符串 
-					printf("%08X %c", pData - 1,(*(pData-1)));      //由于直接打印%s字符串会报错，在多次尝试无果后决定循环打印单个字符
-					//pData--;              
+					printf("%08X %s\n", pData - 1,pData -1);      //注意%s打印字符串我们需要传递给它的是字符串的首地址，%c需要传递地址指向的内容：如*pData
+					//pData--; 
+					/*             
 					for (int k = 0; k < len;k++) {                  //在地址和首字符打印完后，打印接下来的字符    
 						printf("%c",(*(pData+k)));
 					}
 					printf("\n");
+					*/
 				}
 				//printf("\n");
 				(*pData_a++);                                       
